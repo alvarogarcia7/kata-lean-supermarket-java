@@ -21,22 +21,38 @@ public class CajeroTest {
 	}
 
 	@Test
-	public void cajeroConUnaManzana_Should_ReadDosCerezaAs250Discount20Equals230() {
+	public void cajeroConUnaManzana_Should_ReadDosCerezaAs250Discount30Equals220() {
 		Cajero cajero = new Cajero();
 		cajero.read("Manzanas");
 		cajero.read("Cerezas");
 		cajero.read("Cerezas");
-		assertEquals(cajero.total(), 230);
+		assertEquals(cajero.total(), 220);
 	}
 
 	@Test
-	public void cajeroEmpty_Should_ReadFourCerezaAs300Discount40Equals260() {
+	public void cajeroEmpty_Should_ReadFourCerezaAs300Discount60Equals240() {
 		Cajero cajero = new Cajero();
 		cajero.read("Cerezas");
 		cajero.read("Cerezas");
 		cajero.read("Cerezas");
 		cajero.read("Cerezas");
-		assertEquals(cajero.total(), 260);
+		assertEquals(cajero.total(), 240);
+	}
+
+	@Test
+	public void cajeroEmpty_Should_ReadOneBananaAndCharge150() {
+	Cajero cajero = new Cajero();
+	cajero.read("Banana");
+	assertEquals(cajero.total(), 150);
+	
+	}
+
+	@Test
+	public void cajeroEmpty_Should_ReadTwoBananaAndOnlyChargesOne() {
+		Cajero cajero = new Cajero();
+		cajero.read("Banana");
+		cajero.read("Banana");
+		assertEquals(cajero.total(), 150);
 	}
 
 }
