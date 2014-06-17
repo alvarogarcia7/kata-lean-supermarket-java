@@ -10,9 +10,11 @@ public class TPVReader {
 	public static void main(String[] args) throws IOException{
 		BufferedReader bis = new BufferedReader(new InputStreamReader(System.in));
 		String input;
+		Cajero cajero = new Cajero();
 		while(true){
 		input = bis.readLine();
-		System.out.println(input);
+		cajero.read(input);
+		System.out.println(cajero.total());
 		}
 	}
 
